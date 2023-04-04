@@ -1,9 +1,12 @@
-import { returnResponse } from "./return";
+import { Handler, APIGatewayEvent } from 'aws-lambda';
+import { returnResponse } from './return';
+import { getWeatherToday } from '../services';
 
-export const myhandler = () => {
-  // this is my code, this is my destiny\
+export const handler: Handler = async (event: APIGatewayEvent) => {
+  const countryCode = event.queryStringParameters?.countryCode;
+  const postalCode = event.queryStringParameters?.postalCode;
 
-  return returnResponse({});
-}
+  const weatherResponse = await getWeatherToday({ postalCode, countryCode });
 
-export const handler = myhandler;
+  return returnResponse(weatherResponse);
+};

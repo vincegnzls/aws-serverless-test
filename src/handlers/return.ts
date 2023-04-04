@@ -1,11 +1,15 @@
-import { APIGatewayProxyResult } from 'aws-lambda'
-export const returnResponse = (responseObject: any): APIGatewayProxyResult => {
-    return {
-    statusCode: 200,
+import { APIGatewayProxyResult } from 'aws-lambda';
+import { Response } from '../@types';
+
+export const returnResponse = (
+  responseObject: Response,
+): APIGatewayProxyResult => {
+  return {
+    statusCode: responseObject.code,
     headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Credentials': true,
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Credentials': true,
     },
-    body: responseObject,
-    };
+    body: JSON.stringify(responseObject),
+  };
 };
