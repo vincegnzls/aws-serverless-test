@@ -5,7 +5,7 @@ I created a basic API that fetches today's weather using `https://api.openweathe
 ## Main Files:
 
 1. serverless.yml - Added an http `GET` event `/weather`, which can be accessed locally as `http://localhost:3000/development/weather?countryCode=PH&postalCode=1234`
-2. src/handlers/weather.ts - Receives the request with input parameters `countryCode` and `postalCode`, calls the `getWeather` service, and returns a `Response` type, please see below for exmaples
+2. src/handlers/weather.ts - Receives the request with input parameters `countryCode` and `postalCode`, calls the `getWeather` service, and returns a `Response` type, please see below for examples
 
 Sample Success Response:
 
