@@ -32,7 +32,7 @@ export const getWeatherToday = async (
     }
   } catch (e) {
     return {
-      code: e.response.data.cod,
+      code: parseInt(e.response.data.cod),
       message: e.response.data.message,
     };
   }

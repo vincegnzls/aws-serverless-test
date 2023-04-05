@@ -30,7 +30,7 @@ Sample Error Response:
 
 ```json
 {
-  "code": "404",
+  "code": 404,
   "message": "city not found"
 }
 ```
