@@ -41,6 +41,7 @@ Sample Error Response:
 ## Notes:
 
 - I used an env file to store `API_KEY` variable to make it more secure and not publicly reveal the api key used
+- I also added a unit test for the `getWeather` service file inside `__test__` folder
 
 ### Starting and running the application
 
